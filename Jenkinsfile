@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Docker Push'){
             steps{
-                sh 'docker push ariz1985/bankingapp1.0'
+                sh 'docker push ariz1985/bankingandfinanceapp1.0'
           }
         }
     }
