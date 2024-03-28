@@ -38,4 +38,5 @@ pipeline {
                 sh 'docker push ariz1985/bankingapp1.0'
           }
         }
+    }
 }
