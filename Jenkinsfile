@@ -5,7 +5,7 @@ pipeline {
        maven "M2"
     }
     stages {
-        stage('Build') {
+        stage('Git Login') {
             steps {
                 git branch: 'main', url: 'https://github.com/ariz1985/banking-finance.git'
 
@@ -21,5 +21,21 @@ pipeline {
               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Banking-Project/target/surefire-reports/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
           }
           }
+        stage('Docker Build'){
+            steps{
+                sh 'docker build -t ariz1985/bankingapp1.0 .'
+            }
+        }
+        stage('Docker Login'){
+            steps{
+                withCredentials([usernamePassword(credentialsId: 'a8b61de6-497f-470c-b197-3e0a4f22ec55', passwordVariable: 'docker_pass', usernameVariable: 'docker_usr')]) {
+                // some block
+                    }
+            }
+        }
+        stage('Docker Push'){
+            steps{
+                sh 'docker push ariz1985/bankingapp1.0'
           }
+        }
 }
