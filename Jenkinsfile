@@ -28,7 +28,8 @@ pipeline {
         }
         stage('Docker Login'){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'a8b61de6-497f-470c-b197-3e0a4f22ec55', passwordVariable: 'docker_pass', usernameVariable: 'docker_usr')]) {
+                withCredentials([usernamePassword(credentialsId: 'a8b61de6-497f-470c-b197-3e0a4f22ec55', passwordVariable: 'docker_pass', usernameVariable: 'docker_usr')])
+                {
                        sh  'docker login -u $docker_usr -p $docker_pass'
 
                     }
