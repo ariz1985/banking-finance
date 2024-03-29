@@ -15,7 +15,4 @@ resource "aws_instance" "my-banking-server" {
     provisioner "local-exec"{
       command= "echo ${aws_instance.my-banking-server.id} > inventory"
     }
-  provisioner "remote-exec"{
-  
-  }
-    }
+}
