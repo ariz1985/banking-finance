@@ -45,7 +45,7 @@ pipeline {
                   withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'a9a1c88f-de59-4017-92a8-be86bfe7824a', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     dir('terraform'){
                       sh 'chmod 600 aws.pem'
-                      sh 'terraform.init'
+                      sh 'terraform init'
                       sh 'terraform validate'
                       sh 'terraform apply --auto-aprove'
                     }
