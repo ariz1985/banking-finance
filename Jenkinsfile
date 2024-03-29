@@ -40,7 +40,7 @@ pipeline {
                 sh 'docker push ariz1985/bankingandfinanceapp1.0'
             }
         }
-        stage('Terraform Step){
+        stage('Terraform Step'){
               steps{
                   withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'a9a1c88f-de59-4017-92a8-be86bfe7824a', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     dir('terraform')
