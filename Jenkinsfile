@@ -47,7 +47,7 @@ pipeline {
                       sh 'chmod 600 aws.pem'
                       sh 'terraform init'
                       sh 'terraform validate'
-                      sh 'terraform apply --auto-aprove'
+                      sh 'terraform apply --auto-approve'
                     }
             }
               }
