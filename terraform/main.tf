@@ -16,7 +16,7 @@ resource "aws_instance" "my-banking-server" {
       command= "echo ${aws_instance.my-banking-server.public_ip} > inventory"
     }
   provisioner "local-exec"{
-      command= "ansible-playbook ./ansible.yml"
+      command= "ansible-playbook file("./ansible.yml")"
     }
   metadata_options {
     http_endpoint           = "enabled"
