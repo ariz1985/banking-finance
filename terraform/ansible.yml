@@ -1,8 +1,8 @@
 ---
-- host:all
-  user:ubuntu
-  become:yes
-  connection:ssh
+- hosts: all
+  user: ubuntu
+  become: yes
+  connection: ssh
  tasks:
    - name : update the instance
      command : sudo apt get update
