@@ -1,4 +1,5 @@
-- hosts: all
+- name : Configure Docker on EC2 Instances
+  hosts: all
   become: true
   connection: ssh
   tasks:
