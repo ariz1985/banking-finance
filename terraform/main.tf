@@ -6,14 +6,13 @@ resource "aws_instance" "my-banking-server" {
   tags = {
     Name = "my-banking-server"
   }
-  provisioner "remote-exec{
+  
    connection{
    type=  "ssh"
    user= "ubuntu"
    private_key= file("./aws.pem")
    host= self.public_ip
     }
-}
     provisioner "local-exec"{
       command= "echo ${aws_instance.my-banking-server.public_ip} > inventory"
     }
