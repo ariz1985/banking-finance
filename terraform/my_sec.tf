@@ -3,7 +3,7 @@ resource "aws_security_group" "my_sec" {
   description = "Allow inbound traffic and all outbound traffic"
  
    tags = {
-    Name = "allow_tls"
+    Name = "allow_connection"
       }
     egress{
       from_port=0
