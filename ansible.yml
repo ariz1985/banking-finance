@@ -1,5 +1,4 @@
 - hosts: all
-  user: ubuntu
   become: true
   connection: ssh
   tasks:
