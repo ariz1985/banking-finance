@@ -5,9 +5,12 @@
   tasks:
    - name : update the instance
      command : sudo apt get update
+     
    - name: Install docker
-     command: sudo apt install -y docker.io
+     command: sudo apt install docker.io -y
+     
    - name: start docker
      command : sudo systemctl start docker
+     
    - name: start container
      command: docker run -td -p 8080:8080 ariz1985/bankingandfinanceapp1.0
