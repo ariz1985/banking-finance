@@ -9,7 +9,7 @@ resource "aws_instance" "my-banking-server" {
    connection{
    type=  "ssh"
    user= "ubuntu"
-   private_key= file("./aws.pem")
+   private_key= file("./aws")
    host= self.public_ip
     }
     provisioner "local-exec"{
