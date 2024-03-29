@@ -15,4 +15,10 @@ resource "aws_instance" "my-banking-server" {
     provisioner "local-exec"{
       command= "echo ${aws_instance.my-banking-server.id} > inventory"
     }
+  metadata_options {
+    http_endpoint           = "enabled"
+    http_tokens             = "optional"
+    http_put_response_hop_limit = 2
+    instance_metadata_tags="enabled"
+  }
 }
