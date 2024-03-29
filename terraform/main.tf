@@ -13,7 +13,7 @@ resource "aws_instance" "my-banking-server" {
    host=self.public_ip
     }
     provisioner "local-exec"{
-      command= "echo ${aws_instance.my-banking-server.id} > inventory"
+      command= "echo ${aws_instance.my-banking-server.public_ip} > inventory"
     }
   metadata_options {
     http_endpoint           = "enabled"
@@ -24,5 +24,5 @@ resource "aws_instance" "my-banking-server" {
 }
 output "Instance_Id"{
   description="Ip Address"
-  value=aws_instance.my-banking-server.id
+  value=aws_instance.my-banking-server.public_ip
 }
