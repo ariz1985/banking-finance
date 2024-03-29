@@ -2,7 +2,7 @@ resource "aws_instance" "my-banking-server" {
   ami= "ami-080e1f13689e07408"
   instance_type = "t2.micro"
   vpc_security_group_ids=[aws_security_group.my_sec.id]
-  key_name="aws.pem"
+  key_name="aws"
   tags = {
     Name = "my-banking-server"
   }
