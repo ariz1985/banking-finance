@@ -22,7 +22,7 @@ resource "aws_instance" "my-banking-server" {
     instance_metadata_tags="enabled"
   }
 }
-output "Instance_Id{
+output "Instance_Id"{
   description="Ip Address"
   value=aws_instance.my-banking-server.id
 }
