@@ -15,10 +15,13 @@ resource "aws_instance" "my-banking-server" {
     provisioner "local-exec"{
       command= "echo ${aws_instance.my-banking-server.public_ip} > inventory"
     }
+  provisioner "local-exec"{
+      command= "ansible-playbook ./ansible.yml"
+    }
   metadata_options {
     http_endpoint           = "enabled"
-    http_tokens             = "optional"
-    http_put_response_hop_limit = 2
+    http_tokens             = "required"
+    http_put_response_hop_limit = 1
     instance_metadata_tags="enabled"
   }
 }
