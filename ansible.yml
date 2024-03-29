@@ -1,9 +1,8 @@
----
 - hosts: all
   user: ubuntu
   become: true
   connection: ssh
- tasks:
+  tasks:
    - name : update the instance
      command : sudo apt get update
    - name: Install docker
