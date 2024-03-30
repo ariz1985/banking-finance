@@ -19,6 +19,9 @@ resource "aws_instance" "my-banking-server" {
   provisioner "local-exec"{
       command= "ansible-playbook /var/lib/jenkins/workspace/banking-project/ansible.yml"
     }
+ provisioner "remote-exec" {
+    inline = [ "echo 'wait to start instance' "]
+  }
   metadata_options {
     http_endpoint           = "enabled"
     http_tokens             = "required"
