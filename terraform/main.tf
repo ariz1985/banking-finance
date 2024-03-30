@@ -7,7 +7,7 @@ resource "aws_instance" "my-banking-server" {
     Name = "my-banking-server"
   }
   
-   connection{
+   connection {
    type=  "ssh"
    user= "ubuntu"
    private_key= file("./aws.pem")
