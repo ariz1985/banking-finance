@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Docker Login'){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'ff94a3cd-c1b2-41b5-9bb7-899a414cd313', passwordVariable: 'docker_password', usernameVariable: 'docker_user')]) 
+                withCredentials([usernamePassword(credentialsId: '0040f00f-6bc2-4985-8817-1cde0de22453', passwordVariable: 'docker_password', usernameVariable: 'docker_user')])
                 {
                        sh  'docker login -u $docker_user -p $docker_password'
 
@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Terraform Step'){
               steps{
-                  withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'a9a1c88f-de59-4017-92a8-be86bfe7824a', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                  withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'dab8fbad-fae6-4c12-a4ad-fb774fac5b7b', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]){
                     dir('terraform'){
                       sh 'chmod 600 aws.pem'
                       sh 'terraform init'
