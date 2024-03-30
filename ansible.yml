@@ -4,7 +4,7 @@
   connection: ssh
   tasks:
    - name : update the instance
-     command : sudo apt get update
+     command : sudo apt update
      
    - name: Install docker
      command: sudo apt install -y docker.io 
@@ -13,4 +13,4 @@
      command : sudo systemctl start docker
      
    - name: start container
-     command: docker run -td -p 8080:8080 ariz1985/bankingandfinanceapp1.0
+     command: docker run -itd -p 8080:8080 ariz1985/bankingandfinanceapp1.0
