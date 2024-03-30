@@ -17,7 +17,7 @@ resource "aws_instance" "my-banking-server" {
       command= "echo ${aws_instance.my-banking-server.public_ip} > inventory"
     }
   provisioner "local-exec"{
-      command= "ansible-playbook /var/lib/jenkins/workspace/banking-project/ansible.yml"
+      command= "ansible-playbook /var/lib/jenkins/workspace/banking-project/terraform/ansible.yml"
     }
  provisioner "remote-exec" {
     inline = [ "echo 'wait to start instance' "]
