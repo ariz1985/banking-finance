@@ -13,15 +13,16 @@ resource "aws_instance" "my-banking-server" {
    private_key= file("./aws.pem")
    host= self.public_ip
     }
+  provisioner "remote-exec" {
+    inline = [ "echo 'wait to start instance' "]
+  }
     provisioner "local-exec"{
       command= "echo ${aws_instance.my-banking-server.public_ip} > inventory"
     }
   provisioner "local-exec"{
       command= "ansible-playbook /var/lib/jenkins/workspace/banking-try/terraform/ansible.yml"
     }
- provisioner "remote-exec" {
-    inline = [ "echo 'wait to start instance' "]
-  }
+ 
   metadata_options {
     http_endpoint           = "enabled"
     http_tokens             = "required"
