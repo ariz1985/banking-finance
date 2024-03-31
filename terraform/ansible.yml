@@ -13,4 +13,4 @@
      command : sudo systemctl start docker
      
    - name: start container
-     command: docker run -itd -p 8080:8080 ariz1985/bankingandfinanceapp1.0
+     command: docker run -itd -p 8084:8081 ariz1985/bankingandfinanceapp1.0
