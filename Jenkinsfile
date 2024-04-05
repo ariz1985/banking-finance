@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git Login') {
             steps {
-                git branch: 'main', url: 'https://github.com/ariz1985/banking-finance.git'
+                git branch: 'main', url: 'https://github.com/ariz1985/banking-finance.git' 
 
             }
     }
