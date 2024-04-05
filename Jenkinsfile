@@ -3,6 +3,7 @@ pipeline {
 
     tools {
        maven "M2"
+        
     }
     stages {
         stage('Git Login') {
